@@ -1,0 +1,38 @@
+<md-toolbar md-scroll-shrink>
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="Settings">
+      <!-- <md-icon md-svg-icon="assets/images/ic_menu_48px.svg"></md-icon> -->
+    </md-button>
+    <h2>
+      <span>Muatu</span>
+    </h2>
+    <span flex></span>
+    <md-button class="md-icon-button">
+      <md-icon md-svg-icon="assets/images/ic_refresh_48px.svg"
+        ng-click="refresh()">
+      </md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
+<md-content class="md-padding" style="height: {{$window.innerHeight}}px">
+  <div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading">
+    <md-progress-circular class="md-hue-2" md-mode="indeterminate"></md-progress-circular>
+  </div>
+  <div ng-repeat="paper in papers">
+    <md-card>
+      <img ng-src="{{paper.image}}">
+      <md-card-content>
+        <h2 class="md-title">{{paper.title}}</h2>
+        <p>{{paper.description}}</p>
+        <div layout="row" layout-align="end center">
+          <md-button ng-href="#papers/{{paper.id}}"
+            class="md-fab"
+            aria-label="View">
+            <md-icon md-svg-src="assets/images/ic_chevron_right_36px.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-content>
+    </md-card>
+    </br>
+  </div>
+</md-content>

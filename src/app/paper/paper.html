@@ -1,0 +1,21 @@
+<md-toolbar md-scroll-shrink>
+  <div class="md-toolbar-tools">
+    <md-button ng-href="#/"
+      class="md-icon-button"
+      aria-label="Settings"> 
+      <md-icon md-svg-icon="assets/images/ic_arrow_back_48px.svg"></md-icon>
+    </md-button>
+    <h2>
+      <span>{{paper.title}}</span>
+    </h2>
+    <span flex></span>
+  </div>
+</md-toolbar>
+<md-content layout-padding style="height: {{$window.innerHeight}}px">
+  <md-card>
+    <img class="hero" hero-id="paper-image-{{paper.id}}" ng-src="{{paper.image}}">
+    <md-card-content>
+      <p ng-bind-html="paper.text | nl2br"</p>
+    </md-card-content>
+  </md-card>
+</md-content>
