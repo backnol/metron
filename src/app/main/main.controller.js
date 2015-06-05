@@ -18,6 +18,9 @@ class MainCtrl {
             $scope.papers.unshift(paper);
           }
         });
+        if($scope.papers.length > 50){
+          $scope.papers = $scope.papers.slice(0,49);
+        }
         localStorageService.set('papers', $scope.papers);
         $scope.loading = false;
       });
